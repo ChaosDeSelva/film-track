@@ -1,0 +1,14 @@
+.film-view {
+  .film-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .film-details {
+    flex-grow: 4;
+  }
+
+  .film-poster {
+    flex-grow: 1;
+  }
+}

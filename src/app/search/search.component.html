@@ -1,0 +1,10 @@
+<form class="example-form" (keydown)="keyDownFunction($event)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Search for a Movie..." [formControl]="searchFormControl"
+           [errorStateMatcher]="matcher">
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="searchFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>

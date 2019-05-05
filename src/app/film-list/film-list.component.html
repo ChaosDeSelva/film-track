@@ -1,0 +1,30 @@
+<div class="film-search-results">
+  <ng-template [ngIf]="films">
+    <ul>
+     <li *ngFor="let film of films">
+       <div class="film-container">
+         <div class="film-wrapper">
+           <div class="film-poster">
+              <img src="{{film.Poster}}" width="100px" />
+           </div>
+           <div class="film-details">
+             <div>{{film.Title}}</div>
+             <div>Year: {{film.Year}}</div>
+             <div>Type: {{film.Type}}</div>
+             <div>imdbID: {{film.imdbID}}</div>
+             <br/>
+             <button mat-raised-button (click)="onViewFilm(film.imdbID)">View Details</button>
+           </div>
+         </div>
+       </div>
+     </li>
+    </ul>
+
+    <div align="center">
+      <button [disabled]="pageIndex <= 1" mat-raised-button (click)="prevPage()">Previous</button>
+      <div class="button-divider"></div>
+      <button [disabled]="pageIndexError" mat-raised-button (click)="nextPage()">Next</button>
+    </div>
+    <br/><br/>
+  </ng-template>
+</div>

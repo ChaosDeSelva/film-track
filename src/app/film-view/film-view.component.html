@@ -1,0 +1,36 @@
+<div class="film-view">
+  <ng-template [ngIf]="film">
+    <div class="film-container">
+      <div class="film-details">
+        <h1>{{film.Title}}</h1>
+        <p>{{film.Plot}}</p>
+
+        <b>Actors</b>
+        <p>{{film.Actors}}</p>
+
+        <b>Directors</b>
+        <p>{{film.Director}}</p>
+
+        <b>Writers</b>
+        <p>{{film.Writer}}</p>
+
+        <b>Awards</b>
+        <p>{{film.Awards}}</p>
+
+        <b>Website</b>
+        <p><a href="{{film.Website}}" target="_blank">{{film.Website}}</a></p>
+
+        <b>IMDB Score</b>
+        <p>{{film.imdbRating}} ( {{film.imdbVotes}} Votes )</p>
+
+        <b>Ratings</b>
+        <div *ngFor="let rating of film.Ratings">
+          <p>{{rating.Source}} {{rating.Value}}</p>
+        </div>
+      </div>
+      <div class="film-poster" align="center">
+        <img src="{{film.Poster}}" width="300px"/>
+      </div>
+    </div>
+  </ng-template>
+</div>
